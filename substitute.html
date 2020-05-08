@@ -700,7 +700,12 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ibase=
 <span class="hljs-number">111010101011000010000000</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ibase=16; obase=2; EAB080&quot;</span> | bc | sed <span class="hljs-string">&apos;s/.\{8\}/&amp; /g&apos;</span>
-<span class="hljs-number">11101010</span> <span class="hljs-number">10110000</span> <span class="hljs-number">10000000</span>
+<span class="hljs-number">11101010</span> <span class="hljs-number">10110000</span> <span class="hljs-number">10000000</span> 
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ibase=16; obase=2; EAB080&quot;</span> | bc | fold -b8
+<span class="hljs-number">11101010</span>
+<span class="hljs-number">10110000</span>
+<span class="hljs-number">10000000</span>
 </code></pre>
 
                     
