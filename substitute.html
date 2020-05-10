@@ -696,17 +696,20 @@ bcab
 <p><code>bc</code> &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC785;&#xB825;&#xACFC; &#xCD9C;&#xB825;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; base ( &#xC9C4;&#xBC95; ) &#xC744; &#xB9C8;&#xC74C;&#xB300;&#xB85C; &#xC870;&#xC815;&#xD560; &#xC218;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;.
 &#xCD9C;&#xB825;&#xC744; 2 &#xC9C4;&#xBC95;&#xC73C;&#xB85C; &#xD588;&#xC744; &#xB54C; byte &#xB2E8;&#xC704;&#xB85C; &#xC22B;&#xC790;&#xB97C; 8 &#xAC1C;&#xC529; &#xAD6C;&#xBD84;&#xD574;&#xC11C; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xC785;&#xB825;&#xC740; 16 &#xC9C4;&#xC218;, &#xCD9C;&#xB825;&#xC740; 2 &#xC9C4;&#xC218;&#xB85C; &#xD588;&#xC744;&#xB54C; byte &#xB2E8;&#xC704;&#xB85C; &#xAD6C;&#xBD84;&#xD558;&#xAE30;&#xAC00; &#xC5B4;&#xB835;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ibase=16; obase=2; EAB080&quot;</span> | bc
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;obase=2; ibase=16; EAB080&quot;</span> | bc
 <span class="hljs-number">111010101011000010000000</span>
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ibase=16; obase=2; EAB080&quot;</span> | bc | sed <span class="hljs-string">&apos;s/.\{8\}/&amp; /g&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;obase=2; ibase=16; EAB080&quot;</span> | bc | sed <span class="hljs-string">&apos;s/.\{8\}/&amp; /g&apos;</span>
 <span class="hljs-number">11101010</span> <span class="hljs-number">10110000</span> <span class="hljs-number">10000000</span> 
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ibase=16; obase=2; EAB080&quot;</span> | bc | fold -b8
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;obase=2; ibase=16; EAB080&quot;</span> | bc | fold -b8
 <span class="hljs-number">11101010</span>
 <span class="hljs-number">10110000</span>
 <span class="hljs-number">10000000</span>
 </code></pre>
+<blockquote>
+<p>bc &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xB550; obase &#xAC00; ibase &#xC55E;&#xC5D0; &#xC640;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 
                     
                     </section>
