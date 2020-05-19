@@ -549,6 +549,57 @@ $ ls <span class="hljs-operator">-l</span> /usr/bin/ | sed -n $=
 $ ls <span class="hljs-operator">-l</span> /usr/bin/ | awk <span class="hljs-string">&apos;END {print NR}&apos;</span>
 <span class="hljs-number">2954</span>
 </code></pre>
+<h3 id="&#xC608;&#xC81C;-">&#xC608;&#xC81C; )</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD615;&#xC2DD;&#xC758; &#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C;&#xC774; &#xC788;&#xC744; &#xACBD;&#xC6B0; <code>seq=</code> &#xAC12;&#xACFC; <code>port=</code> &#xAC12;&#xC774; &#xBAA8;&#xB450; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xB9CC;
+<code>seq=1,port=8001</code> &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat data
+[p1]
+seq=<span class="hljs-number">1</span>
+pr=<span class="hljs-number">13</span>
+pt=<span class="hljs-number">15</span>
+dev=ke_3p
+ad=/asd/asd
+port=<span class="hljs-number">8001</span>
+
+[p2]
+seq=                <span class="hljs-comment"># seq &#xAC12;&#xC774; &#xC5C6;&#xC74C;</span>
+pr=<span class="hljs-number">13</span>
+pt=<span class="hljs-number">15</span>
+dev=ke_ge
+ad=/asd/qwe
+port=<span class="hljs-number">8002</span>
+
+[p3]
+seq=<span class="hljs-number">3</span>
+pr=<span class="hljs-number">13</span>
+pt=<span class="hljs-number">15</span>
+dev=ke_ge
+ad=/asd/qwe
+port=               <span class="hljs-comment"># port &#xAC12;&#xC774; &#xC5C6;&#xC74C;</span>
+
+[p4]
+seq=<span class="hljs-number">4</span>
+pr=<span class="hljs-number">13</span>
+pt=<span class="hljs-number">15</span>
+dev=ke_ge
+ad=/asd/qwe
+port=<span class="hljs-number">8004</span>
+------------------
+
+<span class="hljs-comment"># &#xC5EC;&#xAE30;&#xC11C;&#xB294; &apos;H;z;x&apos; &#xBD80;&#xBD84;&#xC774; &#xC911;&#xC694;&#xD55C;&#xB370; &apos;H&apos; &#xB85C; hold space &#xC5D0; append &#xD55C; &#xD6C4;&#xC5D0;</span>
+<span class="hljs-comment"># &apos;z&apos; &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xD604;&#xC7AC; pattern space &#xB97C; clear &#xD558;&#xACE0;</span>
+<span class="hljs-comment"># &apos;x&apos; &#xB85C; pattern space &#xC640; hold space &#xB97C; exchange &#xD574;&#xC57C; hold space &#xC5D0; &#xB370;&#xC774;&#xD130;&#xAC00; &#xB0A8;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ sed -rn <span class="hljs-string">&apos;{ /seq=[0-9]+/h; /port=[0-9]+/{ H;z;x; /seq=/{ s/\n/,/; p} }}&apos;</span> data
+seq=<span class="hljs-number">1</span>,port=<span class="hljs-number">8001</span>
+seq=<span class="hljs-number">4</span>,port=<span class="hljs-number">8004</span>
+
+<span class="hljs-comment"># &apos;H;z;x&apos; &#xB300;&#xC2E0;&#xC5D0; &apos;H;g&apos; &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ sed -rn <span class="hljs-string">&apos;{ /seq=[0-9]+/h; /port=[0-9]+/{ H;g; /seq=/{ s/\n/,/; p} }}&apos;</span> data
+seq=<span class="hljs-number">1</span>,port=<span class="hljs-number">8001</span>
+seq=<span class="hljs-number">1</span>,port=<span class="hljs-number">8001</span>
+port=<span class="hljs-number">8002</span>
+seq=<span class="hljs-number">4</span>,port=<span class="hljs-number">8004</span>
+</code></pre>
 
                     
                     </section>
