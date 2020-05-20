@@ -494,7 +494,7 @@ sed &#xB9CC; &#xC788;&#xC73C;&#xBA74; &#xB530;&#xB85C; &#xC5D0;&#xB514;&#xD130;&
   Your browser does not support the video tag.
 </video>
 
-<pre><code class="lang-bash"><span class="hljs-comment"># multi-line &#xC785;&#xB825;&#xD558;&#xB294; &#xBC29;&#xBC95; ( &#xB77C;&#xC778; &#xB05D;&#xC5D0; &apos;\&apos; &#xBB38;&#xC790;&#xB97C; &#xBD99;&#xC778;&#xB2E4; )</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># multiple line &#xC785;&#xB825;&#xD558;&#xB294; &#xBC29;&#xBC95; ( &#xB77C;&#xC778; &#xB05D;&#xC5D0; &apos;\&apos; &#xBB38;&#xC790;&#xB97C; &#xBD99;&#xC778;&#xB2E4; )</span>
 sed -i <span class="hljs-string">&apos;2a \
 192.168.100.1     gateway\
 192.168.100.2     webserver\
@@ -580,23 +580,18 @@ $ seq <span class="hljs-number">3</span> | sed <span class="hljs-operator">-e</s
 <span class="hljs-number">2</span>
 <span class="hljs-number">3</span>
 </code></pre>
-<p>&#xB2E4;&#xC74C;&#xC740; multi-lines &#xC744; &#xC785;&#xB825;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;. <code>a</code> &#xBA85;&#xB839;&#xB3C4; &#xBC29;&#xBC95;&#xC740; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;2i -----\
------&apos;</span>
-<span class="hljs-number">1</span>
------
------
-<span class="hljs-number">2</span>
-<span class="hljs-number">3</span>
-
-$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;2i\
------\
------&apos;</span>
-<span class="hljs-number">1</span>
------
------
-<span class="hljs-number">2</span>
-<span class="hljs-number">3</span>
+<p>&#xB2E4;&#xC74C;&#xC740; multiple line &#xC744; &#xC785;&#xB825;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;. <code>a</code> &#xBA85;&#xB839;&#xB3C4; &#xBC29;&#xBC95;&#xC740; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ seq <span class="hljs-number">3</span> | sed <span class="hljs-string">&apos;2i -----\               $ seq 3 | sed &apos;</span><span class="hljs-number">2</span>i \
+-----\                                 -----\
+-----<span class="hljs-string">&apos;                                 -----\
+                                       -----&apos;</span>
+<span class="hljs-number">1</span>                                      
+-----                                  <span class="hljs-number">1</span>
+-----                                  -----
+-----                                  -----
+<span class="hljs-number">2</span>                                      -----
+<span class="hljs-number">3</span>                                      <span class="hljs-number">2</span>
+                                       <span class="hljs-number">3</span>
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xC740; shell &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ AA=<span class="hljs-number">100</span>
