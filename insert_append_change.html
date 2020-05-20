@@ -494,7 +494,14 @@ sed &#xB9CC; &#xC788;&#xC73C;&#xBA74; &#xB530;&#xB85C; &#xC5D0;&#xB514;&#xD130;&
   Your browser does not support the video tag.
 </video>
 
-<pre><code class="lang-bash"><span class="hljs-comment"># 4 &#xBC88;&#xC9F8; &#xB77C;&#xC778; &#xB4A4;&#xC5D0; &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB4E4;&#xB824;&#xBA74;</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># multi-line &#xC785;&#xB825;&#xD558;&#xB294; &#xBC29;&#xBC95; ( &#xB77C;&#xC778; &#xB05D;&#xC5D0; &apos;\&apos; &#xBB38;&#xC790;&#xB97C; &#xBD99;&#xC778;&#xB2E4; )</span>
+sed -i <span class="hljs-string">&apos;2a \
+192.168.100.1     gateway\
+192.168.100.2     webserver\
+192.168.100.3     dbserver
+&apos;</span> hosts
+
+<span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB4E4;&#xB824;&#xBA74;</span>
 $ sed -i <span class="hljs-string">&apos;4a\\&apos;</span> hosts       <span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778; 1 &#xAC1C;</span>
 $ sed -i <span class="hljs-string">&apos;4a\\n&apos;</span> hosts      <span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778; 2 &#xAC1C;</span>
 $ sed -i <span class="hljs-string">&apos;4a\\n\n&apos;</span> hosts    <span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778; 3 &#xAC1C;</span>
