@@ -485,7 +485,7 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="--insert-append-change"><img src="images/buttons/i.png" \=""> <img src="images/buttons/a.png" \=""> <img src="images/buttons/c.png" \=""> insert, append, change</h1>
-<p>&#xC774; &#xBA85;&#xB839;&#xB4E4;&#xC740; vi &#xB098; nano &#xAC19;&#xC740; &#xC5D0;&#xB514;&#xD130;&#xAC00; &#xC5C6;&#xB294; &#xD2B9;&#xC218;&#xD55C; &#xD658;&#xACBD;&#xC5D0;&#xC11C; &#xD30C;&#xC77C;&#xC744; &#xC218;&#xC815;&#xD574;&#xC57C; &#xB420; &#xACBD;&#xC6B0;
+<p>&#xC774; &#xBA85;&#xB839;&#xB4E4;&#xC740; <code>vi</code> &#xB098; <code>nano</code> &#xAC19;&#xC740; &#xC5D0;&#xB514;&#xD130;&#xAC00; &#xC5C6;&#xB294; &#xD2B9;&#xC218;&#xD55C; &#xD658;&#xACBD;&#xC5D0;&#xC11C; &#xD30C;&#xC77C;&#xC744; &#xC218;&#xC815;&#xD574;&#xC57C; &#xB420; &#xACBD;&#xC6B0;
 &#xC720;&#xC6A9;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC6D0;&#xB798; sed &#xAC00; &#xB77C;&#xC778; &#xC5D0;&#xB514;&#xD130;&#xC778; <code>ed</code> &#xB97C; stream &#xBC84;&#xC804;&#xC73C;&#xB85C; &#xB9CC;&#xB4E0; &#xAC83;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; 
 sed &#xB9CC; &#xC788;&#xC73C;&#xBA74; &#xB530;&#xB85C; &#xC5D0;&#xB514;&#xD130;&#xAC00; &#xD544;&#xC694; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -494,7 +494,11 @@ sed &#xB9CC; &#xC788;&#xC73C;&#xBA74; &#xB530;&#xB85C; &#xC5D0;&#xB514;&#xD130;&
   Your browser does not support the video tag.
 </video>
 
-
+<pre><code class="lang-bash"><span class="hljs-comment"># 4 &#xBC88;&#xC9F8; &#xB77C;&#xC778; &#xB4A4;&#xC5D0; &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB4E4;&#xB824;&#xBA74;</span>
+$ sed -i <span class="hljs-string">&apos;4a\\&apos;</span> hosts       <span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778; 1 &#xAC1C;</span>
+$ sed -i <span class="hljs-string">&apos;4a\\n&apos;</span> hosts      <span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778; 2 &#xAC1C;</span>
+$ sed -i <span class="hljs-string">&apos;4a\\n\n&apos;</span> hosts    <span class="hljs-comment"># &#xACF5;&#xBC31; &#xB77C;&#xC778; 3 &#xAC1C;</span>
+</code></pre>
 <hr>
 <p>&#xC774; &#xBA85;&#xB839;&#xB4E4;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; pattern space &#xC640;&#xB294; &#xAD00;&#xACC4;&#xAC00; &#xC5C6;&#xB294; &#xBA85;&#xB839;&#xB4E4;&#xB85C; &#xC785;&#xB825;&#xD55C; &#xAC12;&#xC774; 
 sed &#xC5D0;&#xC758;&#xD574; queue &#xB418;&#xC5C8;&#xB2E4;&#xAC00; &#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;.
